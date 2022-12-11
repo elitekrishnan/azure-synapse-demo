@@ -1,0 +1,13 @@
+{
+	"name": "GenericSqlDataSet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabaseServer",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}
