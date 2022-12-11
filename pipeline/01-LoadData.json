@@ -48,7 +48,7 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "Copy data",
+							"name": "CopyData-to-DataLake",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
