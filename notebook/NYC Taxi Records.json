@@ -1,5 +1,5 @@
 {
-	"name": "Notebook 1",
+	"name": "NYC Taxi Records",
 	"properties": {
 		"nbformat": 4,
 		"nbformat_minor": 2,
@@ -12,12 +12,12 @@
 			"driverCores": 4,
 			"executorMemory": "28g",
 			"executorCores": 4,
-			"numExecutors": 4,
+			"numExecutors": 2,
 			"conf": {
 				"spark.dynamicAllocation.enabled": "false",
-				"spark.dynamicAllocation.minExecutors": "4",
-				"spark.dynamicAllocation.maxExecutors": "4",
-				"spark.autotune.trackingId": "b689592a-aef7-48ff-8b4a-51e9dbb2f99f"
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "64e89747-bbd8-4a55-a644-252360fb3bda"
 			}
 		},
 		"metadata": {
@@ -50,13 +50,14 @@
 		"cells": [
 			{
 				"cell_type": "code",
+				"metadata": {
+					"microsoft": {
+						"language": "python"
+					}
+				},
 				"source": [
 					"%%pyspark\r\n",
-					"df = spark.read.load('abfss://externaldata@stsynapsedemoeastus.dfs.core.windows.net/CustomerList.csv', format='csv'\r\n",
-					"## If header exists uncomment line below\r\n",
-					"##, header=True\r\n",
-					")\r\n",
-					"display(df.limit(10))"
+					"spark.Read.load()"
 				],
 				"execution_count": null
 			}
