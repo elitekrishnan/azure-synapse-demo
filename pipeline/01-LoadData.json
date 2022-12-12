@@ -23,7 +23,17 @@
 					},
 					"dataset": {
 						"referenceName": "GenericSqlDataSet",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"sqlServerName": {
+								"value": "@pipeline().parameters.ParmSqlServerName",
+								"type": "Expression"
+							},
+							"sqlDatabaseName": {
+								"value": "@pipeline().parameters.ParmSqlDatabaseName",
+								"type": "Expression"
+							}
+						}
 					},
 					"firstRowOnly": false
 				}
@@ -91,7 +101,17 @@
 							"inputs": [
 								{
 									"referenceName": "GenericSqlDataSet",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"sqlServerName": {
+											"value": "@pipeline().parameters.ParmSqlServerName",
+											"type": "Expression"
+										},
+										"sqlDatabaseName": {
+											"value": "@pipeline().parameters.ParmSqlDatabaseName",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
@@ -119,6 +139,14 @@
 			"ParmContainer": {
 				"type": "string",
 				"defaultValue": "synapsedemofilesystem"
+			},
+			"ParmSqlServerName": {
+				"type": "string",
+				"defaultValue": "sql-synapse-demo.database.windows.net"
+			},
+			"ParmSqlDatabaseName": {
+				"type": "string",
+				"defaultValue": "sqldb-synapse-demo"
 			}
 		},
 		"annotations": [],
