@@ -2,12 +2,12 @@
 	"name": "sqlPool-CSV-Select-Customer-Data",
 	"properties": {
 		"content": {
-			"query": "Select \n    region,\n    sum(Cast(Salary as NUMERIC)) as TotalSalary\nFROM \nOPENROWSET(\n\n    BULK 'https://stsynapsedemoeastus.dfs.core.windows.net/externaldata/CustomerData_LocationWise.csv',\n    FORMAT ='CSV',\n    HEADER_ROW = True,\n    PARSER_VERSION = '2.0'\n\n) as  [Result]\nGROUP BY\n    REGION\n\nSelect * from \nOPENROWSET(\n\n    BULK 'https://stsynapsedemoeastus.dfs.core.windows.net/externaldata/CustomerData_LocationWise.csv',\n    FORMAT ='CSV',\n    HEADER_ROW = True,\n    PARSER_VERSION = '2.0'\n\n) as  [Result]",
+			"query": "Select \n    region,\n    sum(Cast(Salary as NUMERIC)) as TotalSalary\nFROM \nOPENROWSET(\n\n    BULK 'https://stsynapsedemoeastus.dfs.core.windows.net/externaldata/CustomerData_LocationWise.csv',\n    FORMAT ='CSV',\n    HEADER_ROW = True,\n    PARSER_VERSION = '2.0'\n\n) as  [Result]\nGROUP BY\n    REGION\n\nSelect * from \nOPENROWSET(\n\n    BULK 'https://stsynapsedemoeastus.dfs.core.windows.net/externaldata/CustomerData_LocationWise.csv',\n    FORMAT ='CSV',\n    HEADER_ROW = True,\n    PARSER_VERSION = '2.0'\n\n) as  [Result]\n\n\n",
 			"metadata": {
 				"language": "sql"
 			},
 			"currentConnection": {
-				"databaseName": "master",
+				"databaseName": "default",
 				"poolName": "Built-in"
 			},
 			"resultLimit": 5000
