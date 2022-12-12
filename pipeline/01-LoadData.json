@@ -124,7 +124,7 @@
 											"type": "Expression"
 										},
 										"path": {
-											"value": "@concat(item().SchemaName,'/', item().TableName)",
+											"value": "@concat(pipeline().parameters.ParmSqlDatabaseName,'/',item().SchemaName,'/', item().TableName)",
 											"type": "Expression"
 										}
 									}
