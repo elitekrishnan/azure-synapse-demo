@@ -1,8 +1,8 @@
 {
-	"name": "SQL script 5",
+	"name": "sqlPool-Parquet-Select-Yellow-Trip-Data",
 	"properties": {
 		"content": {
-			"query": "-- This is auto-generated code\nSELECT\n    TOP 100 * \nFROM\n    OPENROWSET(\n        BULK 'https://stsynapsedemoeastus.dfs.core.windows.net/externaldata/yellow_tripdata_2022-01.parquet',\n        FORMAT = 'PARQUET'\n    ) AS [result]\n",
+			"query": "-- This is auto-generated code\n\n-- SQL Code to Select data from Parquet file in SQL Pool\nSELECT\n    TOP 100 * \nFROM\n    OPENROWSET(\n        BULK 'https://stsynapsedemoeastus.dfs.core.windows.net/externaldata/yellow_tripdata_2022-01.parquet',\n        FORMAT = 'PARQUET'\n    ) AS [result]\n",
 			"metadata": {
 				"language": "sql"
 			},

@@ -1,5 +1,5 @@
 {
-	"name": "SQL script 4",
+	"name": "sqlPool-Parquet-Select-Customer-Data",
 	"properties": {
 		"content": {
 			"query": "-- This is auto-generated code\nSELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK 'https://stsynapsedemoeastus.dfs.core.windows.net/synapsedemofilesystem/SalesLT/Customer/data_f3cf85ce-2793-4082-af41-7522724d0014_1335a235-2f5f-4df9-ac78-938c8cbd11f3.parquet',\n        FORMAT = 'PARQUET'\n    ) AS [result]\n",

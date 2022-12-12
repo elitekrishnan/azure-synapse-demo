@@ -1,5 +1,5 @@
 {
-	"name": "SQL script 2",
+	"name": "sqlPool-CSV-Select-Customer-List-Data",
 	"properties": {
 		"content": {
 			"query": "SELECT \n*\nFROM \nOPENROWSET(\n    BULK 'abfss://externaldata@stsynapsedemoeastus.dfs.core.windows.net/CustomerList.csv',\n    FORMAT = 'CSV',\n    HEADER_ROW = TRUE,\n    PARSER_VERSION ='2.0'\n)  as Result",
