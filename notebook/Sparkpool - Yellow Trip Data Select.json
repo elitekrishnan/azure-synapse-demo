@@ -1,5 +1,5 @@
 {
-	"name": "Sparkpool Notebook",
+	"name": "Sparkpool - Yellow Trip Data Select",
 	"properties": {
 		"nbformat": 4,
 		"nbformat_minor": 2,
@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "82947a30-fc84-44ec-aaf9-92b97d7fee9b"
+				"spark.autotune.trackingId": "576e72cb-8939-4376-a7c0-b4309ae451ca"
 			}
 		},
 		"metadata": {
