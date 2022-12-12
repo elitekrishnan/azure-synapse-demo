@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "f9f57866-858f-4c64-aa9a-5cfce24d2370"
+				"spark.autotune.trackingId": "f0712405-51a1-4d62-8d07-8eea4f4b8be8"
 			}
 		},
 		"metadata": {
@@ -87,6 +87,28 @@
 					"df.write.mode(\"overwrite\").saveAsTable(\"nycTaxiData.yellow_tripdata\")"
 				],
 				"execution_count": 8
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"df_data = spark.sql(\"Select count(*) as Cont From nyctaxidata.yellow_tripdata\")\r\n",
+					"display(df_data)\r\n",
+					"#display(df_data)\r\n",
+					""
+				],
+				"execution_count": 11
 			}
 		]
 	}
