@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "64e89747-bbd8-4a55-a644-252360fb3bda"
+				"spark.autotune.trackingId": "f9f57866-858f-4c64-aa9a-5cfce24d2370"
 			}
 		},
 		"metadata": {
@@ -25,7 +25,7 @@
 			"enableDebugMode": false,
 			"kernelspec": {
 				"name": "synapse_pyspark",
-				"display_name": "python"
+				"display_name": "Synapse PySpark"
 			},
 			"language_info": {
 				"name": "python"
@@ -53,13 +53,40 @@
 				"metadata": {
 					"microsoft": {
 						"language": "python"
-					}
+					},
+					"jupyter": {
+						"outputs_hidden": false
+					},
+					"collapsed": false
 				},
 				"source": [
 					"%%pyspark\r\n",
-					"spark.Read.load()"
+					"df = spark.read.load(path='abfss://externaldata@stsynapsedemoeastus.dfs.core.windows.net/yellow_tripdata_2022-01.parquet',format='parquet')\r\n",
+					"#display(df.limit(10))\r\n",
+					"#display(df.schema)\r\n",
+					""
 				],
-				"execution_count": null
+				"execution_count": 7
+			},
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": true
+				},
+				"source": [
+					"spark.sql(\"Create Database If Not Exists nycTaxiData\")\r\n",
+					"df.write.mode(\"overwrite\").saveAsTable(\"nycTaxiData.yellow_tripdata\")"
+				],
+				"execution_count": 8
 			}
 		]
 	}
