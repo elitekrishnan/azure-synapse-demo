@@ -1,5 +1,5 @@
 {
-	"name": "NYC Taxi Records",
+	"name": "SparkPool - NYC Taxi Records",
 	"properties": {
 		"nbformat": 4,
 		"nbformat_minor": 2,
@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "325eb06e-b46a-4981-94a3-e9c1e3e4663c"
+				"spark.autotune.trackingId": "dc377316-b4d5-4ed1-9491-60d757a6657d"
 			}
 		},
 		"metadata": {
@@ -103,12 +103,11 @@
 					"collapsed": false
 				},
 				"source": [
-					"df_data = spark.sql(\"Select count(*) as Cont From nyctaxidata.yellow_tripdata\")\r\n",
-					"display(df_data)\r\n",
-					"#display(df_data)\r\n",
+					"df_data = spark.sql(\"Select * From nyctaxidata.yellow_tripdata\")\r\n",
+					"display(df_data.limit(50))\r\n",
 					""
 				],
-				"execution_count": 14
+				"execution_count": 19
 			}
 		]
 	}
